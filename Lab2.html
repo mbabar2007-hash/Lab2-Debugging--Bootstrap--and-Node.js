@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Decimal to Binary Converter</title>
+<style>
+:root{--bg:#f4f6fb;--card:#fff;--text:#1b2033;--muted:#6a7290;--accent:#4f46e5;--out:#eef0ff;--border:#d9dcee;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12141f;--card:#1c1f30;--text:#eef0ff;--muted:#9aa1c4;--accent:#818cf8;--out:#262a45;--border:#33375a}}
+:root[data-theme="dark"]{--bg:#12141f;--card:#1c1f30;--text:#eef0ff;--muted:#9aa1c4;--accent:#818cf8;--out:#262a45;--border:#33375a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.card{width:100%;max-width:440px;background:var(--card);border:1px solid var(--border);border-radius:18px;padding:28px;box-shadow:0 10px 30px rgba(0,0,0,.08)}
+h1{margin:0 0 4px;font-size:1.5rem}
+p{margin:0 0 20px;color:var(--muted);font-size:.95rem}
+label{display:block;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:6px}
+input{width:100%;padding:14px;font-size:1.2rem;border:2px solid var(--border);border-radius:12px;background:var(--bg);color:var(--text);outline:none}
+input:focus{border-color:var(--accent)}
+.out{margin-top:20px;padding:16px;border-radius:12px;background:var(--out);font-family:ui-monospace,Menlo,Consolas,monospace;font-size:1.5rem;letter-spacing:.08em;word-break:break-all;min-height:62px;color:var(--accent)}
+.err{color:#e5484d}
+button{margin-top:16px;width:100%;padding:12px;border:0;border-radius:12px;background:var(--accent);color:#fff;font-size:1rem;font-weight:600;cursor:pointer}
+button:hover{opacity:.9}
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>Decimal → Binary</h1>
+  <p>Type a whole number and see it in binary.</p>
+  <label for="dec">Decimal number</label>
+  <input id="dec" type="number" min="0" step="1" placeholder="e.g. 42" autofocus>
+  <label style="margin-top:20px">Binary</label>
+  <div class="out" id="out">—</div>
+  <button id="copy">Copy binary</button>
+</div>
+<script>
+const dec=document.getElementById('dec'),out=document.getElementById('out');
+function convert(){
+  const v=dec.value.trim();
+  out.classList.remove('err');
+  if(v===''){out.textContent='—';return}
+  if(!/^\d+$/.test(v)){out.classList.add('err');out.textContent='Enter a whole number ≥ 0';return}
+  out.textContent=BigInt(v).toString(2);
+}
+dec.addEventListener('input',convert);
+document.getElementById('copy').addEventListener('click',()=>{
+  try{navigator.clipboard.writeText(out.textContent)}catch(e){}
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ontario Tech Trips</title>
+
+    <!-- Bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+  </head>
+  <body style="padding-top: 70px;">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Ontario Tech</a>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"> <!-- as you shrink, a button will show up -->
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- align every thing on the right side -->
+        <div class="navbar-collapse collapse justify-content-end" id="navbarNavDropdown">
+          <ul class="nav nav-pills">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-bs-toggle="dropdown">Country</a>
+              <ul class="dropdown-menu">
+                <li class="dropdown-item">Canada</li>
+                <li class="dropdown-item"><a href="#">Toronto</a></li>
+                <li class="dropdown-item"><a href="#">Montreal</a></li>
+                <li class="dropdown-divider"></li>
+                <li class="dropdown-item">USA</li>
+                <li class="dropdown-item"><a href="#">New York</a></li>
+                <li class="dropdown-item"><a href="#">Las Vegas</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#contact" data-bs-toggle="modal">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="p-5 mb-4 bg-light rounded-3 text-center">
+        <h1>Ontario Tech Trips</h1>
+        <p>Start Your Journey Here!</p>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <a href="#">
+            <img src="toronto.jpg" class="img-thumbnail">
+          </a>
+          <h3>Toronto</h3>
+          <p>Toronto is one of Canada's leading tourism destinations. In 2009, Toronto region received 9.62 million overnight visitors, of which 6.42 million were domestic visitors and 1.99 million were from the United States. Toronto has an array of tourist attractions, and a rich cultural life.</p>
+          <a href="#" class="btn btn-danger">View</a>
+        </div>
+        <div class="col-sm-4">
+          <a href="#">
+            <img src="montreal.jpg" class="img-thumbnail">
+          </a>
+          <h3>Montréal</h3>
+          <p>Tourism is an important industry in Montreal, Quebec, Canada. The city welcomed 7, 648, 722 overnight visitors and 11, 792, 970 day trip visitors in 2010. Montreal attracted 1, 770, 739 international overnight visitors in 2010, most of them from the United States, France, the United Kingdom, Germany, Mexico and Japan.</p>
+          <a href="#" class="btn btn-danger">View</a>
+        </div>
+        <div class="col-sm-4">
+          <a href="#">
+            <img src="newyork.jpg" class="img-thumbnail">
+          </a>
+          <h3>New York</h3>
+          <p>Tourism in New York City serves over 54 million foreign and American tourists each year including day-trippers. Major destinations include the Empire State Building, Ellis Island, Broadway theatre productions, museums such as Metropolitan Museum of Art, and other tourist attractions including Central Park, Washington Swuare Park, Rockefeller Center, Times Square, the Bronx Zoo, Barclay Center, Coney Island, South Street Seaport, New York Botanical Garden, luxury shopping along Fifth and Madison Avenues.</p>
+          <a href="#" class="btn btn-danger">View</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer --> 
+    <nav class="navbar fixed-bottom navbar-dark bg-dark"> 
+      <div class="container-fluid"> 
+        <span class="navbar-text text-white"> 
+          Ontario Tech University 
+        </span> 
+
+    </div> 
+
+  </nav>
+
+    <!-- Bootstrap JS (needed for the toggler and dropdown) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
